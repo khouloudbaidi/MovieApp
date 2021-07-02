@@ -5,7 +5,6 @@ import "./MoviList.css";
 const MoviList = ({ movies, input, rating, AddMovie }) => {
   return (
     <div className="movieList">
-      {/* <MoviCard AddMovie={AddMovie} /> */}
       {movies
         .filter(
           (movie) =>
@@ -15,6 +14,7 @@ const MoviList = ({ movies, input, rating, AddMovie }) => {
         .map((movie) => (
           <MoviCard movie={movie} key={movie.id} />
         ))}
+      <MoviCard AddMovie={AddMovie} addMovieCard={true} />
     </div>
   );
 };

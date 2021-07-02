@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
-// import serie5 from "../../assets/dar";
+import serie5 from "../../assets/dark.jpg";
 
 const AddMovie = ({ AddMovie }) => {
   const [show, setShow] = useState(false);
@@ -51,7 +51,7 @@ const AddMovie = ({ AddMovie }) => {
           <Button
             variant="primary"
             onClick={() => {
-              AddMovie({ id: Math.random(), title, rating, img: "hhh" });
+              AddMovie({ id: Math.random(), title, rating, img: serie5 });
               handleClose();
             }}
           >

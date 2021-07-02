@@ -1,21 +1,28 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import MovieRating from "../Rating/Rating";
-// import Modal from "../AddMovie/AddMovie";
+import Modal from "../AddMovie/AddMovie";
 
-const MoviCard = ({ movie, AddMovie }) => {
+const MoviCard = ({ movie, AddMovie, addMovieCard }) => {
+  console.log(movie);
   return (
     <>
-      {/* <Modal AddMovie={AddMovie} /> */}
-
       <div>
-        <Card style={{ width: "15rem" }}>
-          <Card.Img variant="top" src={movie.img} style={{ width: "97%" }} />
-          <Card.Body>
-            <Card.Title className="movieTitle">{movie.title}</Card.Title>
-            <MovieRating filterRate={false} movieRating={movie.rating} />
-          </Card.Body>
-        </Card>
+        {addMovieCard ? (
+          <Card style={{ width: "15rem" }}>
+            <Card.Body>
+              <Modal AddMovie={AddMovie} />
+            </Card.Body>
+          </Card>
+        ) : (
+          <Card style={{ width: "15rem" }}>
+            <Card.Img variant="top" src={movie.img} style={{ width: "97%" }} />
+            <Card.Body>
+              <Card.Title>{movie.title}</Card.Title>
+              <MovieRating filterRate={false} movieRating={movie.rating} />
+            </Card.Body>
+          </Card>
+        )}
       </div>
     </>
   );
